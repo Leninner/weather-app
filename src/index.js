@@ -1,3 +1,4 @@
+let nameCity = document.getElementById('name');
 let prueba = document.getElementById('prueba');
 let btn = document.getElementById('btn');
 
@@ -14,10 +15,14 @@ async function getCityInfo(cityName) {
 }
 
 function displayInfo(cityName) {
-  getCityInfo(cityName).then((data) => {
-    prueba.textContent = `${data.name} ${data.main.temp}`;
-    console.log(data);
-  });
+  getCityInfo(cityName)
+    .then((data) => {
+      prueba.textContent = `${data.name} ${data.main.temp}`;
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
-btn.addEventListener('click', () => displayInfo('Ambato'));
+btn.addEventListener('click', () => displayInfo(nameCity.value)); //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
