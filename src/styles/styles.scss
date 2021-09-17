@@ -22,9 +22,30 @@ section {
     }
     .home {
       height: calc(100vh - 90%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        border-style: none;
+        outline: none;
+        border: 2px solid white;
+        padding: 8px;
+      }
+
+      input:focus {
+        border: 2px solid red;
+      }
+
+      img {
+        width: 25px;
+      }
     }
     .weather {
       height: calc(100vh - 60%);
+      img {
+        width: 45%;
+        margin: 20px auto;
+      }
     }
     .temp {
       height: calc(100vh - 80%);

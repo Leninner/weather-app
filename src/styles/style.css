@@ -20,9 +20,28 @@ section #asideLeft div {
 }
 section #asideLeft .home {
   height: calc(100vh - 90%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section #asideLeft .home input {
+  border-style: none;
+  outline: none;
+  border: 2px solid white;
+  padding: 8px;
+}
+section #asideLeft .home input:focus {
+  border: 2px solid red;
+}
+section #asideLeft .home img {
+  width: 25px;
 }
 section #asideLeft .weather {
   height: calc(100vh - 60%);
+}
+section #asideLeft .weather img {
+  width: 45%;
+  margin: 20px auto;
 }
 section #asideLeft .temp {
   height: calc(100vh - 80%);
