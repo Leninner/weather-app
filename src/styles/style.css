@@ -1,3 +1,38 @@
 * {
-  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
 }
+
+section {
+  display: flex;
+}
+section #asideLeft {
+  width: 37%;
+  height: 100vh;
+  background-color: rgba(33, 85, 105, 0.959);
+}
+section #asideLeft div {
+  width: 95%;
+  text-align: center;
+  background-color: green;
+  margin: 0 auto;
+}
+section #asideLeft .home {
+  height: calc(100vh - 90%);
+}
+section #asideLeft .weather {
+  height: calc(100vh - 60%);
+}
+section #asideLeft .temp {
+  height: calc(100vh - 80%);
+}
+section #asideLeft .city {
+  height: calc(100vh - 73%);
+}
+section #asideRight {
+  width: 63%;
+  height: 100vh;
+  background-color: #ff0beb;
+}
+
+/*# sourceMappingURL=style.css.map */
