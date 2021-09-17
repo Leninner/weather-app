@@ -8,6 +8,7 @@ section {
   display: flex;
 }
 section #asideLeft {
+  color: white;
   width: 37%;
   height: 100vh;
   background-color: #1d3557;
@@ -31,7 +32,7 @@ section #asideLeft .home input {
   padding: 8px;
 }
 section #asideLeft .home input:focus {
-  border: 2px solid red;
+  border: 2px solid #fbff00;
 }
 section #asideLeft .home img {
   width: 25px;
@@ -45,9 +46,16 @@ section #asideLeft .weather img {
 }
 section #asideLeft .temp {
   height: calc(100vh - 80%);
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 section #asideLeft .city {
   height: calc(100vh - 73%);
+  font-size: 25px;
+}
+section #asideLeft .city p {
+  margin-top: 10px;
 }
 section #asideRight {
   width: 63%;

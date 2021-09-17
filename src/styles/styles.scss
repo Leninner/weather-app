@@ -11,15 +11,18 @@ section {
   display: flex;
 
   #asideLeft {
+    color: white;
     width: 37%;
     height: 100vh;
     background-color: $color-secondary;
+
     div {
       width: 95%;
       text-align: center;
       outline: 1px solid green;
       margin: 0 auto;
     }
+
     .home {
       height: calc(100vh - 90%);
       display: flex;
@@ -33,13 +36,14 @@ section {
       }
 
       input:focus {
-        border: 2px solid red;
+        border: 2px solid rgb(251, 255, 0);
       }
 
       img {
         width: 25px;
       }
     }
+
     .weather {
       height: calc(100vh - 60%);
       img {
@@ -47,11 +51,20 @@ section {
         margin: 20px auto;
       }
     }
+
     .temp {
       height: calc(100vh - 80%);
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
+
     .city {
       height: calc(100vh - 73%);
+      font-size: 25px;
+      p {
+        margin-top: 10px;
+      }
     }
   }
 
