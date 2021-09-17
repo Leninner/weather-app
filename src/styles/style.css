@@ -11,7 +11,7 @@ section #asideLeft {
   color: white;
   width: 37%;
   height: 100vh;
-  background-color: #100f1d;
+  background-color: #1e223a;
 }
 section #asideLeft div {
   width: 95%;
@@ -70,10 +70,20 @@ section #asideLeft .author {
 section #asideRight {
   width: 63%;
   height: 100vh;
-  background-color: #1e223a;
+  background-color: #100f1d;
 }
-section #asideRight #changeTemperature button {
+section #asideRight .asideRightMain {
+  width: 80%;
+  margin: 0 auto;
+}
+section #asideRight .asideRightMain #changeTemperature {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+section #asideRight .asideRightMain #changeTemperature button {
   margin: 5px;
+  margin-top: 10px;
   text-align: center;
   width: 30px;
   height: 30px;
@@ -81,8 +91,48 @@ section #asideRight #changeTemperature button {
   border-style: none;
   background-color: white;
 }
-section #asideRight #changeTemperature .active {
+section #asideRight .asideRightMain #changeTemperature .active {
   background-color: yellow;
+}
+section #asideRight .asideRightMain #nextDays {
+  display: flex;
+  margin: 30px 0;
+  width: 100%;
+  justify-content: space-between;
+}
+section #asideRight .asideRightMain #nextDays div {
+  width: 100px;
+  height: 130px;
+  background-color: #1e223a;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+section #asideRight .asideRightMain #nextDays div img {
+  width: 80%;
+  margin: 5px 0px;
+}
+section #asideRight .asideRightMain #nextDays div p {
+  font-size: 13px;
+}
+section #asideRight .asideRightMain #todayHighlights {
+  color: white;
+}
+section #asideRight .asideRightMain .ji, section #asideRight .asideRightMain #highlights .highlightsSecond, section #asideRight .asideRightMain #highlights .highlightsMain {
+  width: 315px;
+  background-color: #1e223a;
+  margin: 15px;
+}
+section #asideRight .asideRightMain #highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+}
+section #asideRight .asideRightMain #highlights .highlightsMain {
+  height: 150px;
+}
+section #asideRight .asideRightMain #highlights .highlightsSecond {
+  height: 125px;
 }
 
 /*# sourceMappingURL=style.css.map */

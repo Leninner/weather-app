@@ -15,7 +15,7 @@ section {
     color: white;
     width: 37%;
     height: 100vh;
-    background-color: $color-secondary;
+    background-color: $color-main;
 
     div {
       width: 95%;
@@ -83,20 +83,80 @@ section {
   #asideRight {
     width: 63%;
     height: 100vh;
-    background-color: $color-main;
+    background-color: $color-secondary;
 
-    #changeTemperature {
-      button {
-        margin: 5px;
-        text-align: center;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border-style: none;
-        background-color: white;
+    .asideRightMain {
+      width: 80%;
+      margin: 0 auto;
+
+      #changeTemperature {
+        width: 100%;
+        display: flex;
+        justify-content: right;
+
+        button {
+          margin: 5px;
+          margin-top: 10px;
+          text-align: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border-style: none;
+          background-color: white;
+        }
+        .active {
+          background-color: yellow;
+        }
       }
-      .active {
-        background-color: yellow;
+
+      #nextDays {
+        display: flex;
+        margin: 30px 0;
+        width: 100%;
+        justify-content: space-between;
+
+        div {
+          width: 100px;
+          height: 130px;
+          background-color: $color-main;
+          text-align: center;
+          color: white;
+          padding: 10px;
+
+          img {
+            width: 80%;
+            margin: 5px 0px;
+          }
+
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      #todayHighlights {
+        color: white;
+      }
+
+      .ji {
+        width: 315px;
+        background-color: $color-main;
+        margin: 15px;
+      }
+
+      #highlights {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+
+        .highlightsMain {
+          @extend .ji;
+          height: 150px;
+        }
+        .highlightsSecond {
+          @extend .ji;
+          height: 125px;
+        }
       }
     }
   }
