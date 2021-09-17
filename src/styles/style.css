@@ -10,12 +10,12 @@ section {
 section #asideLeft {
   width: 37%;
   height: 100vh;
-  background-color: rgba(33, 85, 105, 0.959);
+  background-color: #1d3557;
 }
 section #asideLeft div {
   width: 95%;
   text-align: center;
-  background-color: green;
+  outline: 1px solid green;
   margin: 0 auto;
 }
 section #asideLeft .home {
@@ -33,7 +33,7 @@ section #asideLeft .city {
 section #asideRight {
   width: 63%;
   height: 100vh;
-  background-color: #ff0beb;
+  background-color: #005f73;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,8 +4,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-$color-main: rgb(255, 11, 235);
-$color-secondary: rgba(33, 85, 105, 0.959);
+$color-main: #005f73;
+$color-secondary: #1d3557;
 
 section {
   display: flex;
@@ -17,7 +17,7 @@ section {
     div {
       width: 95%;
       text-align: center;
-      background-color: green;
+      outline: 1px solid green;
       margin: 0 auto;
     }
     .home {
