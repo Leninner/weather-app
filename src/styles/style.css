@@ -72,5 +72,17 @@ section #asideRight {
   height: 100vh;
   background-color: #1e223a;
 }
+section #asideRight #changeTemperature button {
+  margin: 5px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: white;
+}
+section #asideRight #changeTemperature .active {
+  background-color: yellow;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -84,5 +84,20 @@ section {
     width: 63%;
     height: 100vh;
     background-color: $color-main;
+
+    #changeTemperature {
+      button {
+        margin: 5px;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border-style: none;
+        background-color: white;
+      }
+      .active {
+        background-color: yellow;
+      }
+    }
   }
 }
