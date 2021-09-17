@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 section {
@@ -11,12 +11,11 @@ section #asideLeft {
   color: white;
   width: 37%;
   height: 100vh;
-  background-color: #1d3557;
+  background-color: #100f1d;
 }
 section #asideLeft div {
   width: 95%;
   text-align: center;
-  outline: 1px solid green;
   margin: 0 auto;
 }
 section #asideLeft .home {
@@ -28,8 +27,16 @@ section #asideLeft .home {
 section #asideLeft .home input {
   border-style: none;
   outline: none;
-  border: 2px solid white;
+  border: 2px solid #6d717d;
   padding: 8px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #6d717d;
+  color: white;
+}
+section #asideLeft .home input::placeholder {
+  text-align: center;
+  color: white;
 }
 section #asideLeft .home input:focus {
   border: 2px solid #fbff00;
@@ -41,8 +48,8 @@ section #asideLeft .weather {
   height: calc(100vh - 60%);
 }
 section #asideLeft .weather img {
-  width: 45%;
-  margin: 20px auto;
+  width: 35%;
+  margin: 30px auto;
 }
 section #asideLeft .temp {
   height: calc(100vh - 80%);
@@ -51,16 +58,19 @@ section #asideLeft .temp {
   letter-spacing: 2px;
 }
 section #asideLeft .city {
-  height: calc(100vh - 73%);
+  height: calc(100vh - 76%);
   font-size: 25px;
 }
 section #asideLeft .city p {
   margin-top: 10px;
 }
+section #asideLeft .author {
+  opacity: 50%;
+}
 section #asideRight {
   width: 63%;
   height: 100vh;
-  background-color: #005f73;
+  background-color: #1e223a;
 }
 
 /*# sourceMappingURL=style.css.map */
