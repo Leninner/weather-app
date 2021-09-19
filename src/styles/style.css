@@ -39,7 +39,7 @@ section #asideLeft .home input::placeholder {
   color: white;
 }
 section #asideLeft .home input:focus {
-  border: 2px solid #fbff00;
+  border: 2px solid #100f1d;
 }
 section #asideLeft .home img {
   width: 25px;
