@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
   celsius.classList.add('active');
 });
 
+// Función para controlar el flujo de clases del tipo de temperatura que estamos utilizando
+const toggleActive = (tempUno, tempDos) => {
+  tempUno.addEventListener('click', () => {
+    if (!tempUno.classList.contains('active')) {
+      tempUno.classList.add('active');
+      tempDos.classList.remove('active');
+      displayInfo(nameCity.value);
+    }
+  });
+};
+
+toggleActive(celsius, farenheit);
+toggleActive(farenheit, celsius);
+
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
   const URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
