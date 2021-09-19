@@ -110,7 +110,7 @@ section #asideRight .asideRightMain #nextDays div {
 }
 section #asideRight .asideRightMain #nextDays div img {
   width: 80%;
-  margin: 5px 0px;
+  margin: 10px 0px;
 }
 section #asideRight .asideRightMain #nextDays div p {
   font-size: 13px;
@@ -123,10 +123,21 @@ section #asideRight .asideRightMain .ji, section #asideRight .asideRightMain #hi
   background-color: #1e223a;
   margin: 15px;
 }
+section #asideRight .asideRightMain .centrar, section #asideRight .asideRightMain #highlights .highlightsSecond, section #asideRight .asideRightMain #highlights .highlightsMain {
+  text-align: center;
+}
+section #asideRight .asideRightMain .centrar h5, section #asideRight .asideRightMain #highlights .highlightsSecond h5, section #asideRight .asideRightMain #highlights .highlightsMain h5 {
+  margin-top: 12px;
+}
+section #asideRight .asideRightMain .centrar h2, section #asideRight .asideRightMain #highlights .highlightsSecond h2, section #asideRight .asideRightMain #highlights .highlightsMain h2 {
+  margin: 12px;
+  font-size: 36px;
+}
 section #asideRight .asideRightMain #highlights {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
+  color: white;
 }
 section #asideRight .asideRightMain #highlights .highlightsMain {
   height: 150px;
