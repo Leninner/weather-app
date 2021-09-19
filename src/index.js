@@ -2,6 +2,29 @@ let nameCity = document.getElementById('name');
 let btn = document.getElementById('btn');
 let imagen = document.getElementById('imgPrueba');
 
+//Variables definitivas
+
+const userId = 'a4e7013a3e412c322cba4d957d4cad8d';
+const temperatura = document.querySelector('#temp');
+const city = document.querySelector('#cityName');
+const country = document.querySelector('#countrySlug');
+const farenheit = document.querySelector('#farenheit');
+const celsius = document.querySelector('#celsius');
+
+document.addEventListener('DOMContentLoaded', () => {
+  celsius.classList.add('active');
+});
+
+// Función para consultar los datos del clima de las ciudades
+async function getCityInfo(cityName) {
+  const URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+  const response = await fetch(URL, {
+    mode: 'cors',
+  });
+  const cityInfo = await response.json();
+  return cityInfo;
+}
+
 //Librería para guardar los climas
 const climas = {
   viento: './src/assets/images/viento.png',
@@ -15,22 +38,22 @@ const climas = {
 
 imagen.src = climas.soleado;
 
-const userId = 'a4e7013a3e412c322cba4d957d4cad8d';
+// Función para comprobar medida de temperatura
+const comprobarMedidaTemp = (celsius, farenheit, data) => {
+  if (celsius.classList.contains('active')) {
+    return (temperatura.textContent = `${(parseFloat(data.main.temp) - 273.15).toFixed(2)} °C`);
+  } else if (farenheit.classList.contains('active')) {
+    return (temperatura.textContent = `${(((parseFloat(data.main.temp) - 273.15) * 9) / 5 + 32).toFixed(2)} °F`);
+  }
+};
 
-//Función para consultar los datos de las ciudades
-async function getCityInfo(cityName) {
-  const URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
-  const response = await fetch(URL, {
-    mode: 'cors',
-  });
-  const cityInfo = await response.json();
-  return cityInfo;
-}
-
+// Función para mostrar la información en el lado izquierdo del sitio
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
-      console.log(data.name);
+      comprobarMedidaTemp(celsius, farenheit, data);
+      city.textContent = data.name;
+      country.textContent = data.sys.country;
       console.table(data);
     })
     .catch((error) => {

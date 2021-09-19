@@ -26,11 +26,11 @@
           <img id="imgPrueba" src="" alt="esta es ua imagen cool" />
         </div>
         <div class="temp">
-          <h1>59 °F</h1>
+          <h1 id="temp">59 °F</h1>
         </div>
         <div class="city">
-          <h3>Ciudad</h3>
-          <p>59 °F</p>
+          <h3 id="cityName">Ciudad</h3>
+          <p id="countrySlug">59 °F</p>
         </div>
         <div class="author">Developed by Leninner</div>
       </div>
@@ -38,9 +38,10 @@
       <div id="asideRight">
         <div class="asideRightMain">
           <section id="changeTemperature">
-            <button class="active">F</button>
-            <button>C</button>
+            <button id="farenheit">F</button>
+            <button id="celsius">C</button>
           </section>
+
           <section id="nextDays">
             <div>
               <h4>Tomorrow</h4>
@@ -68,9 +69,11 @@
               <p>158 - 159</p>
             </div>
           </section>
+
           <section id="todayHighlights">
             <h2>Today's Hightlights</h2>
           </section>
+
           <section id="highlights">
             <div class="highlightsMain">
               <h5>Estado del Viento</h5>
@@ -93,10 +96,6 @@
         </div>
       </div>
     </section>
-
-    <!-- <input type="text" id="name" />
-    <button type="button" id="btn">Consultar Ambato</button>
-    <p id="prueba"></p> -->
     <script src="./src/index.js"></script>
   </body>
 </html>
