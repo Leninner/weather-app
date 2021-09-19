@@ -75,4 +75,11 @@ function displayInfo(cityName) {
     });
 }
 
+// Métodos para empezar la búsqueda de los datos de una nueva ciudad
+
 btn.addEventListener('click', () => displayInfo(nameCity.value)); //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
+document.addEventListener('keydown', (e) => {
+  if (nameCity.value && e.key === 'Enter') {
+    displayInfo(nameCity.value);
+  }
+});
