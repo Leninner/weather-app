@@ -31,10 +31,18 @@ toggleActive(farenheit, celsius);
 
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
-  const URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+  let URL = '';
+
+  if (location.protocol === 'http:') {
+    URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+  } else {
+    URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+  }
+
   const response = await fetch(URL, {
     mode: 'cors',
   });
+
   const cityInfo = await response.json();
   return cityInfo;
 }
@@ -77,9 +85,13 @@ function displayInfo(cityName) {
 
 // Métodos para empezar la búsqueda de los datos de una nueva ciudad
 
-btn.addEventListener('click', () => displayInfo(nameCity.value)); //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
+btn.addEventListener('click', () => {
+  displayInfo(nameCity.value);
+  nameCity.value = '';
+}); //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
 document.addEventListener('keydown', (e) => {
   if (nameCity.value && e.key === 'Enter') {
     displayInfo(nameCity.value);
+    nameCity.value = '';
   }
 });
