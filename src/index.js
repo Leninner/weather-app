@@ -8,31 +8,16 @@ const userId = 'a4e7013a3e412c322cba4d957d4cad8d';
 const temperatura = document.querySelector('#temp');
 const city = document.querySelector('#cityName');
 const country = document.querySelector('#countrySlug');
-const farenheit = document.querySelector('#farenheit');
-const celsius = document.querySelector('#celsius');
 const sw = document.querySelector('#switch');
 
 sw.addEventListener('click', () => {
   sw.classList.toggle('active');
+  if (sw.classList.contains('active')) {
+    displayInfo(city.textContent);
+  } else {
+    displayInfo(city.textContent);
+  }
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  celsius.classList.add('active');
-});
-
-// Función para controlar el flujo de clases del tipo de temperatura que estamos utilizando
-const toggleActive = (tempUno, tempDos) => {
-  tempUno.addEventListener('click', () => {
-    if (!tempUno.classList.contains('active')) {
-      tempUno.classList.add('active');
-      tempDos.classList.remove('active');
-      displayInfo(city.textContent);
-    }
-  });
-};
-
-toggleActive(celsius, farenheit);
-toggleActive(farenheit, celsius);
 
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
@@ -67,10 +52,10 @@ imagen.src = climas.soleado;
 
 // Función para comprobar medida de temperatura
 
-const comprobarMedidaTemp = (celsius, farenheit, data) => {
-  if (celsius.classList.contains('active')) {
+const comprobarMedidaTemp = (sw, data) => {
+  if (!sw.classList.contains('active')) {
     return (temperatura.textContent = `${(parseFloat(data.main.temp) - 273.15).toFixed(2)} °C`);
-  } else if (farenheit.classList.contains('active')) {
+  } else {
     return (temperatura.textContent = `${(((parseFloat(data.main.temp) - 273.15) * 9) / 5 + 32).toFixed(2)} °F`);
   }
 };
@@ -79,7 +64,7 @@ const comprobarMedidaTemp = (celsius, farenheit, data) => {
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
-      comprobarMedidaTemp(celsius, farenheit, data);
+      comprobarMedidaTemp(sw, data);
       city.textContent = data.name;
       country.textContent = data.sys.country;
       console.table(data);
