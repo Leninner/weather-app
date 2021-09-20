@@ -10,15 +10,6 @@ const city = document.querySelector('#cityName');
 const country = document.querySelector('#countrySlug');
 const temps = document.querySelector('#switch');
 
-temps.addEventListener('click', () => {
-  temps.classList.toggle('active');
-  if (temps.classList.contains('active')) {
-    displayInfo(city.textContent);
-  } else {
-    displayInfo(city.textContent);
-  }
-});
-
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
   let URL = '';
@@ -51,7 +42,6 @@ const climas = {
 imagen.src = climas.soleado;
 
 // Función para comprobar medida de temperatura
-
 const comprobarMedidaTemp = (temps, data) => {
   if (!temps.classList.contains('active')) {
     return (temperatura.textContent = `${(parseFloat(data.main.temp) - 273.15).toFixed(2)} °C`);
@@ -74,8 +64,17 @@ function displayInfo(cityName) {
     });
 }
 
-// Métodos para empezar la búsqueda de los datos de una nueva ciudad
+// Método para cambiar entre unidades de temperatura
+temps.addEventListener('click', () => {
+  temps.classList.toggle('active');
+  if (temps.classList.contains('active')) {
+    displayInfo(city.textContent);
+  } else {
+    displayInfo(city.textContent);
+  }
+});
 
+// Métodos para empezar la búsqueda de los datos de una nueva ciudad
 btn.addEventListener('click', () => {
   displayInfo(nameCity.value);
   nameCity.value = '';
