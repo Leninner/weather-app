@@ -35,7 +35,7 @@ const climas = {
   soleado: './src/assets/images/soleado.png',
   torrencial: './src/assets/images/torrencial.png',
   lluvia: './src/assets/images/lluvia.png',
-  llovizna: './src/assets/images/llovizna.png',
+  Rain: './src/assets/images/llovizna.png',
   templado: './src/assets/images/llovizna.png',
   Clouds: './src/assets/images/nublado.png',
 };
