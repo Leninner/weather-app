@@ -89,12 +89,20 @@ async function getNextDays(lat, lon) {
 
 const createDate = (date) => {
   let newDate = new Date(date * 1000);
-  return dias[newDate.getDay()];
+  return `${meses[newDate.getMonth()]}, ${dias[newDate.getDay()]} ${newDate.getDate()}`;
 };
 
-const checkNextWeeks = (index, data) => {
+const checkNextWeeks = (index, data, input) => {
   let date = data[index].dt;
-  secondDay.textContent = createDate(date);
+  input.textContent = createDate(date);
+};
+
+const displayInfoHighlights = (data) => {
+  humedad.textContent = `${data.current.humidity}%`;
+  rangoHumedad.value = data.current.humidity;
+  speedWind.textContent = `${(data.current.wind_speed * 2.237).toFixed(2)} mph`;
+  visibilidad.textContent = `${(data.current.visibility / 1609).toFixed(2)} millas`;
+  pressure.textContent = `${data.current.pressure} hPa`;
 };
 
 // Función para mostrar la información en el sitio
@@ -114,16 +122,13 @@ function displayInfo(cityName) {
     .then((data) => {
       getNextDays(data.lat, data.lon)
         .then((data) => {
-          humedad.textContent = `${data.current.humidity}%`;
-          rangoHumedad.value = data.current.humidity;
-          speedWind.textContent = `${(data.current.wind_speed * 2.237).toFixed(2)} mph`;
-          visibilidad.textContent = `${(data.current.visibility / 1609).toFixed(2)} millas`;
-          pressure.textContent = `${data.current.pressure} hPa`;
-          return data.daily;
-        })
-        .then((data) => {
           console.log(data);
-          checkNextWeeks(0, data);
+          console.log(data.daily);
+          displayInfoHighlights(data);
+          checkNextWeeks(2, data.daily, secondDay);
+          checkNextWeeks(3, data.daily, thirdDay);
+          checkNextWeeks(4, data.daily, fourthDay);
+          checkNextWeeks(5, data.daily, fiveDay);
         })
         .catch((error) => console.error(error));
     })
