@@ -57,7 +57,10 @@ async function getCityInfo(cityName) {
   return cityInfo;
 }
 
-imagen.src = 'http://openweathermap.org/img/wn/01d@4x.png';
+imagen.src =
+  location.protocol === 'http:'
+    ? 'http://openweathermap.org/img/wn/01d@4x.png'
+    : 'https://openweathermap.org/img/wn/01d@4x.png';
 
 // Función para comprobar medida de temperatura
 const comprobarMedidaTemp = (temps, data) => {
@@ -71,7 +74,10 @@ const comprobarMedidaTemp = (temps, data) => {
 //Función para mostrar los datos en la tarjeta del día de mañana
 
 const displayInfoCardTomorrow = (data, index, img, p) => {
-  img.src = `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
+  img.src =
+    location.protocol === 'http:'
+      ? `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`
+      : `https://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
   p.textContent = comprobarMedidaTempNextDays(temps, data[index]);
 };
 
@@ -113,7 +119,10 @@ const createDate = (date) => {
 const checkNextWeeks = (index, data, input, img, p) => {
   let date = data[index].dt;
   input.textContent = createDate(date);
-  img.src = `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
+  img.src =
+    location.protocol === 'http:'
+      ? `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`
+      : `https://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
   p.textContent = comprobarMedidaTempNextDays(temps, data[index]);
 };
 
@@ -127,11 +136,17 @@ const displayInfoHighlights = (data) => {
 
 const displayInfoMain = (data) => {
   let source = data.weather[0].icon;
-  imagen.src = `http://openweathermap.org/img/wn/${source}@4x.png`;
+  imagen.src =
+    location.protocol === 'http:'
+      ? `http://openweathermap.org/img/wn/${source}@4x.png`
+      : `https://openweathermap.org/img/wn/${source}@4x.png`;
   comprobarMedidaTemp(temps, data);
   city.textContent = data.name;
   country.textContent = data.sys.country;
-  idImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  idImg.src =
+    location.protocol === 'http:'
+      ? `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+      : `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   pInfo.textContent = `${data.weather[0].description[0].toUpperCase()}${data.weather[0].description.slice(1)}`;
   console.log(data);
 };
