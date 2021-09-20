@@ -8,11 +8,11 @@ const userId = 'a4e7013a3e412c322cba4d957d4cad8d';
 const temperatura = document.querySelector('#temp');
 const city = document.querySelector('#cityName');
 const country = document.querySelector('#countrySlug');
-const sw = document.querySelector('#switch');
+const temps = document.querySelector('#switch');
 
-sw.addEventListener('click', () => {
-  sw.classList.toggle('active');
-  if (sw.classList.contains('active')) {
+temps.addEventListener('click', () => {
+  temps.classList.toggle('active');
+  if (temps.classList.contains('active')) {
     displayInfo(city.textContent);
   } else {
     displayInfo(city.textContent);
@@ -52,8 +52,8 @@ imagen.src = climas.soleado;
 
 // Función para comprobar medida de temperatura
 
-const comprobarMedidaTemp = (sw, data) => {
-  if (!sw.classList.contains('active')) {
+const comprobarMedidaTemp = (temps, data) => {
+  if (!temps.classList.contains('active')) {
     return (temperatura.textContent = `${(parseFloat(data.main.temp) - 273.15).toFixed(2)} °C`);
   } else {
     return (temperatura.textContent = `${(((parseFloat(data.main.temp) - 273.15) * 9) / 5 + 32).toFixed(2)} °F`);
@@ -64,7 +64,7 @@ const comprobarMedidaTemp = (sw, data) => {
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
-      comprobarMedidaTemp(sw, data);
+      comprobarMedidaTemp(temps, data);
       city.textContent = data.name;
       country.textContent = data.sys.country;
       console.table(data);
