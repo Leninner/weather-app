@@ -17,6 +17,22 @@ const speedWind = document.getElementById('speedWind');
 const visibilidad = document.getElementById('visibilidad');
 const pressure = document.getElementById('pressure');
 
+const secondDay = document.getElementById('secondDay'),
+  thirdDay = document.getElementById('thirdDay'),
+  fourthDay = document.getElementById('fourthDay'),
+  fiveDay = document.getElementById('fiveDay');
+
+const imgTomorrow = document.getElementById('imgTomorrow'),
+  imgSecondDay = document.getElementById('imgSecondDay'),
+  imgThirdDay = document.getElementById('imgThirdDay'),
+  imgFourthDay = document.getElementById('imgFourthDay'),
+  imgFiveDay = document.getElementById('imgFiveDay');
+
+const tempTomorrow = document.getElementById('tempTomorrow'),
+  tempSecondDay = document.getElementById('tempSecondDay'),
+  tempThirdDay = document.getElementById('tempThirdDay'),
+  tempFourthDay = document.getElementById('tempFourthDay'),
+  tempFiveDay = document.getElementById('tempFiveDay');
 //Librería de días y meses
 
 const dias = ['Sun', 'Mon', 'Thu', 'Web', 'Tue', 'Fri', 'Sat'];
@@ -69,6 +85,18 @@ async function getNextDays(lat, lon) {
   return cityInfo;
 }
 
+// Función para desplegar info en cada tarjeta
+
+const createDate = (date) => {
+  let newDate = new Date(date * 1000);
+  return dias[newDate.getDay()];
+};
+
+const checkNextWeeks = (index, data) => {
+  let date = data[index].dt;
+  secondDay.textContent = createDate(date);
+};
+
 // Función para mostrar la información en el sitio
 function displayInfo(cityName) {
   getCityInfo(cityName)
@@ -95,9 +123,7 @@ function displayInfo(cityName) {
         })
         .then((data) => {
           console.log(data);
-          let timestamp = data[0].dt;
-          let date = new Date(timestamp * 1000);
-          console.log(date.getDay(), date.getMonth());
+          checkNextWeeks(0, data);
         })
         .catch((error) => console.error(error));
     })
