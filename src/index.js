@@ -52,7 +52,13 @@ const comprobarMedidaTemp = (temps, data) => {
 };
 
 async function getNextDays(lat, lon) {
-  let URL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+  let URL;
+
+  if (location.protocol === 'http:') {
+    URL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+  } else {
+    URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+  }
 
   const response = await fetch(URL, {
     mode: 'cors',
