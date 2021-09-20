@@ -65,7 +65,6 @@ async function getNextDays(lat, lon) {
   });
 
   const cityInfo = await response.json();
-  console.log(cityInfo.current.weather[0].main);
   return cityInfo;
 }
 
@@ -83,9 +82,11 @@ function displayInfo(cityName) {
     })
     .then((data) => {
       console.log(data);
-      getNextDays(data.lat, data.lon).then((data) => {
-        console.log(data);
-      });
+      getNextDays(data.lat, data.lon)
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => console.error(error));
     })
     .catch((error) => {
       console.error(error);
