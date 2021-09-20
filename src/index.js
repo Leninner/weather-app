@@ -14,6 +14,7 @@ const temps = document.querySelector('#switch');
 async function getCityInfo(cityName) {
   let URL = '';
 
+  //Condicional para comprobar el tipo de llamada. Ya sea en modo seguro (https) o modo normal (http). Esto soluciona el problema de GithubPages
   if (location.protocol === 'http:') {
     URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
   } else {
