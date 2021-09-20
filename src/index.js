@@ -68,6 +68,25 @@ const comprobarMedidaTemp = (temps, data) => {
   }
 };
 
+//Función para mostrar los datos en la tarjeta del día de mañana
+
+const displayInfoCardTomorrow = (data, index, img, p) => {
+  img.src = `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
+  p.textContent = comprobarMedidaTempNextDays(temps, data[index]);
+};
+
+//Función para comprobar la medida de la temperatura en las tarjetas de los dias siguientes
+const comprobarMedidaTempNextDays = (temps, data) => {
+  if (!temps.classList.contains('active')) {
+    return `${(data.temp.min - 273.15).toFixed()}°C - ${(data.temp.max - 273.15).toFixed()}°C`;
+  } else {
+    return `${(((data.temp.min - 273.15) * 9) / 5 + 32).toFixed()} °F - ${(
+      ((data.temp.max - 273.15) * 9) / 5 +
+      32
+    ).toFixed()} °F`;
+  }
+};
+
 async function getNextDays(lat, lon) {
   let URL;
 
@@ -91,9 +110,11 @@ const createDate = (date) => {
   return `${meses[newDate.getMonth()]}, ${dias[newDate.getDay()]} ${newDate.getDate()}`;
 };
 
-const checkNextWeeks = (index, data, input) => {
+const checkNextWeeks = (index, data, input, img, p) => {
   let date = data[index].dt;
   input.textContent = createDate(date);
+  img.src = `http://openweathermap.org/img/wn/${data[index].weather[0].icon}@2x.png`;
+  p.textContent = comprobarMedidaTempNextDays(temps, data[index]);
 };
 
 const displayInfoHighlights = (data) => {
@@ -128,10 +149,11 @@ function displayInfo(cityName) {
           console.log(data);
           console.log(data.daily);
           displayInfoHighlights(data);
-          checkNextWeeks(2, data.daily, secondDay);
-          checkNextWeeks(3, data.daily, thirdDay);
-          checkNextWeeks(4, data.daily, fourthDay);
-          checkNextWeeks(5, data.daily, fiveDay);
+          displayInfoCardTomorrow(data.daily, 1, imgTomorrow, tempTomorrow);
+          checkNextWeeks(2, data.daily, secondDay, imgSecondDay, tempSecondDay);
+          checkNextWeeks(3, data.daily, thirdDay, imgThirdDay, tempThirdDay);
+          checkNextWeeks(4, data.daily, fourthDay, imgFourthDay, tempFourthDay);
+          checkNextWeeks(5, data.daily, fiveDay, imgFiveDay, tempFiveDay);
         })
         .catch((error) => console.error(error));
     })
