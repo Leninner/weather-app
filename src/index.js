@@ -86,7 +86,6 @@ async function getNextDays(lat, lon) {
 }
 
 // Función para desplegar info en cada tarjeta
-
 const createDate = (date) => {
   let newDate = new Date(date * 1000);
   return `${meses[newDate.getMonth()]}, ${dias[newDate.getDay()]} ${newDate.getDate()}`;
@@ -105,18 +104,22 @@ const displayInfoHighlights = (data) => {
   pressure.textContent = `${data.current.pressure} hPa`;
 };
 
+const displayInfoMain = (data) => {
+  let source = data.weather[0].icon;
+  imagen.src = `http://openweathermap.org/img/wn/${source}@4x.png`;
+  comprobarMedidaTemp(temps, data);
+  city.textContent = data.name;
+  country.textContent = data.sys.country;
+  idImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  pInfo.textContent = `${data.weather[0].description[0].toUpperCase()}${data.weather[0].description.slice(1)}`;
+  console.log(data);
+};
+
 // Función para mostrar la información en el sitio
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
-      let source = data.weather[0].icon;
-      imagen.src = `http://openweathermap.org/img/wn/${source}@4x.png`;
-      comprobarMedidaTemp(temps, data);
-      city.textContent = data.name;
-      country.textContent = data.sys.country;
-      idImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      pInfo.textContent = `${data.weather[0].description[0].toUpperCase()}${data.weather[0].description.slice(1)}`;
-      console.log(data);
+      displayInfoMain(data);
       return data.coord;
     })
     .then((data) => {
