@@ -10,6 +10,11 @@ const city = document.querySelector('#cityName');
 const country = document.querySelector('#countrySlug');
 const farenheit = document.querySelector('#farenheit');
 const celsius = document.querySelector('#celsius');
+const sw = document.querySelector('#switch');
+
+sw.addEventListener('click', () => {
+  sw.classList.toggle('active');
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   celsius.classList.add('active');
@@ -21,7 +26,7 @@ const toggleActive = (tempUno, tempDos) => {
     if (!tempUno.classList.contains('active')) {
       tempUno.classList.add('active');
       tempDos.classList.remove('active');
-      displayInfo(nameCity.value);
+      displayInfo(city.textContent);
     }
   });
 };
@@ -61,6 +66,7 @@ const climas = {
 imagen.src = climas.soleado;
 
 // Función para comprobar medida de temperatura
+
 const comprobarMedidaTemp = (celsius, farenheit, data) => {
   if (celsius.classList.contains('active')) {
     return (temperatura.textContent = `${(parseFloat(data.main.temp) - 273.15).toFixed(2)} °C`);
