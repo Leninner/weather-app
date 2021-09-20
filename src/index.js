@@ -36,7 +36,7 @@ const climas = {
   lluvia: './src/assets/images/lluvia.png',
   llovizna: './src/assets/images/llovizna.png',
   templado: './src/assets/images/llovizna.png',
-  nublado: './src/assets/images/nublado.png',
+  Clouds: './src/assets/images/nublado.png',
 };
 
 imagen.src = climas.soleado;
@@ -50,14 +50,35 @@ const comprobarMedidaTemp = (temps, data) => {
   }
 };
 
-// Función para mostrar la información en el lado izquierdo del sitio
+async function getNextDays(lat, lon) {
+  let URL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+
+  const response = await fetch(URL, {
+    mode: 'cors',
+  });
+
+  const cityInfo = await response.json();
+  console.log(cityInfo.current.weather[0].main);
+  return cityInfo;
+}
+
+// Función para mostrar la información en el sitio
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
       comprobarMedidaTemp(temps, data);
       city.textContent = data.name;
       country.textContent = data.sys.country;
-      console.table(data);
+      let source = data.weather[0].main;
+      imagen.src = climas[source];
+      console.log(data);
+      return data.coord;
+    })
+    .then((data) => {
+      console.log(data);
+      getNextDays(data.lat, data.lon).then((data) => {
+        console.log(data);
+      });
     })
     .catch((error) => {
       console.error(error);
