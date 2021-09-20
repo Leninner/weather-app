@@ -1,6 +1,7 @@
 let nameCity = document.getElementById('name');
 let btn = document.getElementById('btn');
 let imagen = document.getElementById('imgPrueba');
+let idImg = document.getElementById('idImg');
 
 //Variables definitivas
 
@@ -31,16 +32,17 @@ async function getCityInfo(cityName) {
 
 //Librería para guardar los climas
 const climas = {
-  viento: './src/assets/images/viento.png',
-  soleado: './src/assets/images/soleado.png',
+  804: './src/assets/images/viento.png', //overcast clouds
+  800: 'http://openweathermap.org/img/wn/01d@2x.png', //clear sky
   torrencial: './src/assets/images/torrencial.png',
   lluvia: './src/assets/images/lluvia.png',
-  Rain: './src/assets/images/llovizna.png',
-  templado: './src/assets/images/llovizna.png',
-  Clouds: './src/assets/images/nublado.png',
+  500: './src/assets/images/llovizna.png', //Light Rain
+  802: './src/assets/images/llovizna.png', //scattered clouds
+  801: './src/assets/images/nublado.png', //Few clouds
+  803: './src/assets/images/lluvia.png', //Broken clouds
 };
 
-imagen.src = climas.soleado;
+imagen.src = climas[500];
 
 // Función para comprobar medida de temperatura
 const comprobarMedidaTemp = (temps, data) => {
@@ -72,11 +74,12 @@ async function getNextDays(lat, lon) {
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
+      let source = data.weather[0].id;
+      imagen.src = climas[source];
       comprobarMedidaTemp(temps, data);
       city.textContent = data.name;
       country.textContent = data.sys.country;
-      let source = data.weather[0].main;
-      imagen.src = climas[source];
+      idImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       console.log(data);
       return data.coord;
     })

@@ -58,8 +58,18 @@ section #asideLeft .temp {
   letter-spacing: 2px;
 }
 section #asideLeft .city {
-  height: calc(100vh - 76%);
+  height: calc(100vh - 75%);
   font-size: 25px;
+}
+section #asideLeft .city div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section #asideLeft .city div #idImg {
+  margin-left: 15px;
+  width: 60px;
+  height: 60px;
 }
 section #asideLeft .city p {
   margin-top: 10px;
