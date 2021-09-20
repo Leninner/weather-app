@@ -112,7 +112,7 @@ section {
 
         .switch {
           margin-top: 15px;
-          background-color: #343d58;
+          background-color: #335c67;
           border-radius: 1000px;
           border: none;
           position: relative;
@@ -136,7 +136,7 @@ section {
           }
 
           &.active {
-            background-color: orange;
+            background-color: #c9184a;
             &::after {
               right: 0;
               left: unset;
