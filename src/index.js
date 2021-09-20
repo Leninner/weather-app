@@ -11,6 +11,11 @@ const temperatura = document.querySelector('#temp');
 const city = document.querySelector('#cityName');
 const country = document.querySelector('#countrySlug');
 const temps = document.querySelector('#switch');
+const humedad = document.querySelector('#humedad');
+const rangoHumedad = document.getElementById('rangeHumedad');
+const speedWind = document.getElementById('speedWind');
+const visibilidad = document.getElementById('visibilidad');
+const pressure = document.getElementById('pressure');
 
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
@@ -77,7 +82,12 @@ function displayInfo(cityName) {
       console.log(data);
       getNextDays(data.lat, data.lon)
         .then((data) => {
-          console.log(data);
+          console.log(data.current);
+          humedad.textContent = `${data.current.humidity}%`;
+          rangoHumedad.value = data.current.humidity;
+          speedWind.textContent = `${(data.current.wind_speed * 2.237).toFixed(2)} mph`;
+          visibilidad.textContent = `${(data.current.visibility / 1609).toFixed(2)} millas`;
+          pressure.textContent = `${data.current.pressure} hPa`;
         })
         .catch((error) => console.error(error));
     })
