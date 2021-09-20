@@ -17,15 +17,20 @@ const speedWind = document.getElementById('speedWind');
 const visibilidad = document.getElementById('visibilidad');
 const pressure = document.getElementById('pressure');
 
+//Librería de días y meses
+
+const dias = ['Sun', 'Mon', 'Thu', 'Web', 'Tue', 'Fri', 'Sat'];
+const meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
 // Función para consultar los datos del clima de las ciudades
 async function getCityInfo(cityName) {
   let URL = '';
 
   //Condicional para comprobar el tipo de llamada. Ya sea en modo seguro (https) o modo normal (http). Esto soluciona el problema de GithubPages
   if (location.protocol === 'http:') {
-    URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+    URL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=es&APPID=${userId}`;
   } else {
-    URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${userId}`;
+    URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=es&APPID=${userId}`;
   }
 
   const response = await fetch(URL, {
@@ -51,9 +56,9 @@ async function getNextDays(lat, lon) {
   let URL;
 
   if (location.protocol === 'http:') {
-    URL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+    URL = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&lang=es&appid=${userId}`;
   } else {
-    URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&appid=${userId}`;
+    URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&daily&lang=es&appid=${userId}`;
   }
 
   const response = await fetch(URL, {
@@ -79,15 +84,20 @@ function displayInfo(cityName) {
       return data.coord;
     })
     .then((data) => {
-      console.log(data);
       getNextDays(data.lat, data.lon)
         .then((data) => {
-          console.log(data.current);
           humedad.textContent = `${data.current.humidity}%`;
           rangoHumedad.value = data.current.humidity;
           speedWind.textContent = `${(data.current.wind_speed * 2.237).toFixed(2)} mph`;
           visibilidad.textContent = `${(data.current.visibility / 1609).toFixed(2)} millas`;
           pressure.textContent = `${data.current.pressure} hPa`;
+          return data.daily;
+        })
+        .then((data) => {
+          console.log(data);
+          let timestamp = data[0].dt;
+          let date = new Date(timestamp * 1000);
+          console.log(date.getDay(), date.getMonth());
         })
         .catch((error) => console.error(error));
     })
