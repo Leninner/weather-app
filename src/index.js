@@ -2,6 +2,7 @@ let nameCity = document.getElementById('name');
 let btn = document.getElementById('btn');
 let imagen = document.getElementById('imgPrueba');
 let idImg = document.getElementById('idImg');
+let pInfo = document.getElementById('pInfo');
 
 //Variables definitivas
 
@@ -30,19 +31,7 @@ async function getCityInfo(cityName) {
   return cityInfo;
 }
 
-//Librería para guardar los climas
-const climas = {
-  804: './src/assets/images/viento.png', //overcast clouds
-  800: 'http://openweathermap.org/img/wn/01d@2x.png', //clear sky
-  torrencial: './src/assets/images/torrencial.png',
-  lluvia: './src/assets/images/lluvia.png',
-  500: './src/assets/images/llovizna.png', //Light Rain
-  802: './src/assets/images/llovizna.png', //scattered clouds
-  801: './src/assets/images/nublado.png', //Few clouds
-  803: './src/assets/images/lluvia.png', //Broken clouds
-};
-
-imagen.src = climas[500];
+imagen.src = 'http://openweathermap.org/img/wn/01d@4x.png';
 
 // Función para comprobar medida de temperatura
 const comprobarMedidaTemp = (temps, data) => {
@@ -74,12 +63,13 @@ async function getNextDays(lat, lon) {
 function displayInfo(cityName) {
   getCityInfo(cityName)
     .then((data) => {
-      let source = data.weather[0].id;
-      imagen.src = climas[source];
+      let source = data.weather[0].icon;
+      imagen.src = `http://openweathermap.org/img/wn/${source}@4x.png`;
       comprobarMedidaTemp(temps, data);
       city.textContent = data.name;
       country.textContent = data.sys.country;
       idImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      pInfo.textContent = `${data.weather[0].description[0].toUpperCase()}${data.weather[0].description.slice(1)}`;
       console.log(data);
       return data.coord;
     })

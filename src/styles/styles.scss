@@ -55,7 +55,7 @@ section {
     .weather {
       height: calc(100vh - 60%);
       img {
-        width: 35%;
+        width: 50%;
         margin: 30px auto;
       }
     }
@@ -70,16 +70,22 @@ section {
     .city {
       height: calc(100vh - 75%);
       font-size: 25px;
+
       div {
         display: flex;
         align-items: center;
         justify-content: center;
         #idImg {
-          margin-left: 15px;
+          margin: 0px 15px;
           width: 60px;
           height: 60px;
         }
+        p {
+          margin: 0;
+          font-size: 16px;
+        }
       }
+
       p {
         margin-top: 10px;
       }

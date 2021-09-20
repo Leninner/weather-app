@@ -48,7 +48,7 @@ section #asideLeft .weather {
   height: calc(100vh - 60%);
 }
 section #asideLeft .weather img {
-  width: 35%;
+  width: 50%;
   margin: 30px auto;
 }
 section #asideLeft .temp {
@@ -67,9 +67,13 @@ section #asideLeft .city div {
   justify-content: center;
 }
 section #asideLeft .city div #idImg {
-  margin-left: 15px;
+  margin: 0px 15px;
   width: 60px;
   height: 60px;
+}
+section #asideLeft .city div p {
+  margin: 0;
+  font-size: 16px;
 }
 section #asideLeft .city p {
   margin-top: 10px;
