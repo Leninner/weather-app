@@ -4,27 +4,27 @@
   font-family: "Open Sans", sans-serif;
 }
 
-section {
-  display: flex;
+.home {
+  display: none;
 }
-section #asideLeft {
+.home #asideLeft {
   color: white;
   width: 37%;
   height: 100vh;
   background-color: #1e223a;
 }
-section #asideLeft div {
+.home #asideLeft div {
   width: 95%;
   text-align: center;
   margin: 0 auto;
 }
-section #asideLeft .home {
+.home #asideLeft .home {
   height: calc(100vh - 90%);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-section #asideLeft .home input {
+.home #asideLeft .home input {
   border-style: none;
   outline: none;
   border: 2px solid #6d717d;
@@ -34,68 +34,68 @@ section #asideLeft .home input {
   background-color: #6d717d;
   color: white;
 }
-section #asideLeft .home input::placeholder {
+.home #asideLeft .home input::placeholder {
   text-align: center;
   color: white;
 }
-section #asideLeft .home input:focus {
+.home #asideLeft .home input:focus {
   border: 2px solid #100f1d;
 }
-section #asideLeft .home img {
+.home #asideLeft .home img {
   width: 25px;
 }
-section #asideLeft .weather {
+.home #asideLeft .weather {
   height: calc(100vh - 60%);
 }
-section #asideLeft .weather img {
+.home #asideLeft .weather img {
   width: 50%;
   margin: 30px auto;
 }
-section #asideLeft .temp {
+.home #asideLeft .temp {
   height: calc(100vh - 80%);
   font-size: 36px;
   font-weight: bold;
   letter-spacing: 2px;
 }
-section #asideLeft .city {
+.home #asideLeft .city {
   height: calc(100vh - 75%);
   font-size: 25px;
 }
-section #asideLeft .city div {
+.home #asideLeft .city div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-section #asideLeft .city div #idImg {
+.home #asideLeft .city div #idImg {
   margin: 0px 15px;
   width: 60px;
   height: 60px;
 }
-section #asideLeft .city div p {
+.home #asideLeft .city div p {
   margin: 0;
   font-size: 16px;
 }
-section #asideLeft .city p {
+.home #asideLeft .city p {
   margin-top: 10px;
 }
-section #asideLeft .author {
+.home #asideLeft .author {
   opacity: 50%;
 }
-section #asideRight {
+.home #asideRight {
   width: 63%;
   height: 100vh;
   background-color: #100f1d;
 }
-section #asideRight .asideRightMain {
+.home #asideRight .asideRightMain {
   width: 80%;
   margin: 0 auto;
 }
-section #asideRight .asideRightMain #changeTemperature {
+.home #asideRight .asideRightMain #changeTemperature {
   width: 100%;
   display: flex;
   justify-content: right;
 }
-section #asideRight .asideRightMain #changeTemperature .switch {
+.home #asideRight .asideRightMain #changeTemperature .switch {
   margin-top: 15px;
   background-color: #335c67;
   border-radius: 1000px;
@@ -105,7 +105,7 @@ section #asideRight .asideRightMain #changeTemperature .switch {
   display: flex;
   outline: none;
 }
-section #asideRight .asideRightMain #changeTemperature .switch::after {
+.home #asideRight .asideRightMain #changeTemperature .switch::after {
   content: "";
   display: block;
   width: 30px;
@@ -119,14 +119,14 @@ section #asideRight .asideRightMain #changeTemperature .switch::after {
   transition: 0.3s ease all;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
-section #asideRight .asideRightMain #changeTemperature .switch.active {
+.home #asideRight .asideRightMain #changeTemperature .switch.active {
   background-color: #c9184a;
 }
-section #asideRight .asideRightMain #changeTemperature .switch.active::after {
+.home #asideRight .asideRightMain #changeTemperature .switch.active::after {
   right: 0;
   left: unset;
 }
-section #asideRight .asideRightMain #changeTemperature .switch span {
+.home #asideRight .asideRightMain #changeTemperature .switch span {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -134,16 +134,16 @@ section #asideRight .asideRightMain #changeTemperature .switch span {
   background: none;
   color: white;
 }
-section #asideRight .asideRightMain #changeTemperature .active {
+.home #asideRight .asideRightMain #changeTemperature .active {
   background-color: orange;
 }
-section #asideRight .asideRightMain #nextDays {
+.home #asideRight .asideRightMain #nextDays {
   display: flex;
   margin: 30px 0;
   width: 100%;
   justify-content: space-between;
 }
-section #asideRight .asideRightMain #nextDays div {
+.home #asideRight .asideRightMain #nextDays div {
   width: 100px;
   height: 130px;
   background-color: #1e223a;
@@ -151,42 +151,50 @@ section #asideRight .asideRightMain #nextDays div {
   color: white;
   padding: 10px;
 }
-section #asideRight .asideRightMain #nextDays div img {
+.home #asideRight .asideRightMain #nextDays div img {
   width: 80%;
   margin: 0px;
 }
-section #asideRight .asideRightMain #nextDays div p {
+.home #asideRight .asideRightMain #nextDays div p {
   font-size: 13px;
 }
-section #asideRight .asideRightMain #todayHighlights {
+.home #asideRight .asideRightMain #todayHighlights {
   color: white;
 }
-section #asideRight .asideRightMain .ji, section #asideRight .asideRightMain #highlights .highlightsSecond, section #asideRight .asideRightMain #highlights .highlightsMain {
+.home #asideRight .asideRightMain .ji, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
   width: 315px;
   background-color: #1e223a;
   margin: 15px;
 }
-section #asideRight .asideRightMain .centrar, section #asideRight .asideRightMain #highlights .highlightsSecond, section #asideRight .asideRightMain #highlights .highlightsMain {
+.home #asideRight .asideRightMain .centrar, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
   text-align: center;
 }
-section #asideRight .asideRightMain .centrar h5, section #asideRight .asideRightMain #highlights .highlightsSecond h5, section #asideRight .asideRightMain #highlights .highlightsMain h5 {
+.home #asideRight .asideRightMain .centrar h5, .home #asideRight .asideRightMain #highlights .highlightsSecond h5, .home #asideRight .asideRightMain #highlights .highlightsMain h5 {
   margin-top: 12px;
 }
-section #asideRight .asideRightMain .centrar h2, section #asideRight .asideRightMain #highlights .highlightsSecond h2, section #asideRight .asideRightMain #highlights .highlightsMain h2 {
+.home #asideRight .asideRightMain .centrar h2, .home #asideRight .asideRightMain #highlights .highlightsSecond h2, .home #asideRight .asideRightMain #highlights .highlightsMain h2 {
   margin: 12px;
   font-size: 36px;
 }
-section #asideRight .asideRightMain #highlights {
+.home #asideRight .asideRightMain #highlights {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
   color: white;
 }
-section #asideRight .asideRightMain #highlights .highlightsMain {
+.home #asideRight .asideRightMain #highlights .highlightsMain {
   height: 150px;
 }
-section #asideRight .asideRightMain #highlights .highlightsSecond {
+.home #asideRight .asideRightMain #highlights .highlightsSecond {
   height: 125px;
+}
+
+.active {
+  display: flex;
+}
+
+.remove {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

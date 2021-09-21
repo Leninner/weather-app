@@ -198,3 +198,20 @@ document.addEventListener('keydown', (e) => {
     nameCity.value = '';
   }
 });
+
+//Lógica para ir de la página inicial a la página del clima
+const btnClear = document.querySelector('.clear'),
+  home = document.querySelector('.home');
+
+btnClear.addEventListener('click', () => {
+  btnClear.classList.add('remove');
+  home.classList.add('active');
+});
+
+const returnHome = document.querySelector('#returnHome');
+
+returnHome.addEventListener('click', () => {
+  location.reload(true);
+  // btnClear.classList.remove('remove');
+  // home.classList.remove('active');
+});

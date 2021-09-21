@@ -8,8 +8,8 @@ $color-main: #1e223a;
 $color-secondary: #100f1d;
 $input: #6d717d;
 
-section {
-  display: flex;
+.home {
+  display: none;
 
   #asideLeft {
     color: white;
@@ -223,4 +223,12 @@ section {
       }
     }
   }
+}
+
+.active {
+  display: flex;
+}
+
+.remove {
+  display: none;
 }
