@@ -27,6 +27,7 @@ $input: #6d717d;
       padding: 25px;
       align-items: center;
       h2 {
+        cursor: pointer;
         margin-left: 50px;
         margin-right: 50px;
         font-size: 36px;
@@ -35,6 +36,7 @@ $input: #6d717d;
         display: flex;
         list-style: none;
         li {
+          cursor: pointer;
           margin: 20px;
           font-weight: 100;
           a {
@@ -47,15 +49,6 @@ $input: #6d717d;
         }
       }
     }
-
-    #home-contacto {
-      padding: 25px;
-      width: 50%;
-      text-align: right;
-      button {
-        margin-right: 50px;
-      }
-    }
   }
 
   .contenedorHome {
@@ -64,6 +57,50 @@ $input: #6d717d;
 
     aside {
       width: 50%;
+    }
+
+    h2 {
+      font-size: 36px;
+      cursor: default;
+    }
+
+    #buscador {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: whitesmoke;
+      justify-content: center;
+      input {
+        cursor: pointer;
+        width: 80%;
+        height: 40px;
+        outline: none;
+        border: 2px solid white;
+        background-color: white;
+        text-align: center;
+        border-radius: 25px;
+        font-size: 20px;
+        margin: 20px 0px;
+      }
+      ::placeholder {
+        text-align: center;
+      }
+      input:focus {
+        border: 2px solid black;
+      }
+
+      .clear {
+        border-style: none;
+        width: 20%;
+        height: 35px;
+        border-radius: 25px;
+        font-size: 20px;
+        transition: 0.7s ease all;
+      }
+      .clear:hover {
+        background-color: rgb(6, 255, 193);
+        cursor: pointer;
+      }
     }
 
     #asideImgHome {
