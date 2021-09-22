@@ -1,17 +1,21 @@
 .mainHome {
   height: 100vh;
   width: 100%;
-  background: conic-gradient(
-    from 90deg at 70% 40%,
-    hsl(360, 100%, 50%),
-    hsl(315, 100%, 50%),
-    hsl(270, 100%, 50%),
-    hsl(225, 100%, 50%),
-    hsl(180, 100%, 50%),
-    hsl(135, 100%, 50%),
-    hsl(90, 100%, 50%),
-    hsl(45, 100%, 50%),
-    hsl(0, 100%, 50%)
+
+  background-image: linear-gradient(
+    to right top,
+    #030219,
+    #080c30,
+    #011249,
+    #001462,
+    #0c147b,
+    #25158f,
+    #3b13a2,
+    #510cb5,
+    #6c0ec8,
+    #870fdb,
+    #a20eed,
+    #be0aff
   );
 
   header {
