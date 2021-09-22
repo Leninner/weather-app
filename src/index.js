@@ -201,17 +201,18 @@ document.addEventListener('keydown', (e) => {
 
 //Lógica para ir de la página inicial a la página del clima
 const btnClear = document.querySelector('.clear'),
+  mainHome = document.querySelector('.mainHome'),
   home = document.querySelector('.home');
 
 btnClear.addEventListener('click', () => {
-  btnClear.classList.add('remove');
+  mainHome.classList.add('remove');
   home.classList.add('active');
 });
 
 const returnHome = document.querySelector('#returnHome');
 
 returnHome.addEventListener('click', () => {
-  location.reload(true);
-  // btnClear.classList.remove('remove');
-  // home.classList.remove('active');
+  // location.reload(true);
+  mainHome.classList.remove('remove');
+  home.classList.remove('active');
 });
