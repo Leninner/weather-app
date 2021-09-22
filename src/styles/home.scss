@@ -1,26 +1,22 @@
+$color-main: #1e223a;
+$color-secondary: #100f1d;
+$input: #6d717d;
+
 .mainHome {
   height: 100vh;
   width: 100%;
 
-  background-image: linear-gradient(
-    to right top,
-    #030219,
-    #080c30,
-    #011249,
-    #001462,
-    #0c147b,
-    #25158f,
-    #3b13a2,
-    #510cb5,
-    #6c0ec8,
-    #870fdb,
-    #a20eed,
-    #be0aff
-  );
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   header {
     width: 100%;
-    background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -28,9 +24,9 @@
     #home-info {
       display: flex;
       width: 50%;
-      padding: 20px;
+      padding: 25px;
       h2 {
-        margin-left: 25px;
+        margin-left: 50px;
         margin-right: 25px;
       }
       ul {
@@ -43,11 +39,29 @@
     }
 
     #home-contacto {
-      padding: 20px;
+      padding: 25px;
       width: 50%;
       text-align: right;
       button {
-        margin-right: 25px;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  .contenedorHome {
+    width: 100%;
+    display: flex;
+
+    aside {
+      width: 50%;
+    }
+
+    #asideImgHome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 80%;
       }
     }
   }
