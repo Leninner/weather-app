@@ -41,11 +41,14 @@ const findInfoCityMain = document.querySelector('.findInfoCityMain'),
 const cityMain = document.querySelector('#cityMain');
 
 findInfoCityMain.addEventListener('click', () => {
-  mainHome.classList.add('remove');
-  home.classList.add('active');
-  displayInfo(cityMain.value);
-  cityMain.value = '';
-  //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
+  if (!(cityMain.value === '')) {
+    mainHome.classList.add('remove');
+    home.classList.add('active');
+    displayInfo(cityMain.value);
+    cityMain.value = '';
+  } else {
+    alert('Escribe una ciudad para empezar la búsqueda');
+  }
 });
 
 document.addEventListener('keydown', (e) => {

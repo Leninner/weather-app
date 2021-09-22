@@ -1,0 +1,165 @@
+@media only screen and (max-width: 900px) {
+  .home {
+    display: none;
+  }
+  .home #asideLeft {
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background-color: #1e223a;
+  }
+  .home #asideLeft div {
+    width: 100%;
+    text-align: center;
+  }
+  .home #asideLeft .home {
+    padding: 15px;
+    justify-content: space-evenly;
+  }
+  .home #asideLeft .home input {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .home #asideLeft .home img {
+    width: 50px;
+  }
+  .home #asideLeft .weather {
+    height: 40%;
+  }
+  .home #asideLeft .weather img {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .home #asideLeft .temp {
+    height: 15%;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .home #asideLeft .city {
+    height: 25%;
+    font-size: 36px;
+  }
+  .home #asideLeft .city div #idImg {
+    width: 80px;
+    height: 80px;
+  }
+  .home #asideLeft .city div p {
+    font-size: 20px;
+  }
+  .home #asideLeft .author {
+    opacity: 50%;
+    font-size: 20px;
+  }
+  .home #asideRight {
+    width: 100%;
+  }
+  .home #asideRight .asideRightMain {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .home #asideRight .asideRightMain #changeTemperature {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+  .home #asideRight .asideRightMain #changeTemperature .switch {
+    margin-top: 15px;
+    background-color: #335c67;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+  }
+  .home #asideRight .asideRightMain #changeTemperature .switch::after {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: whitesmoke;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: 0.3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .home #asideRight .asideRightMain #changeTemperature .switch.active {
+    background-color: #c9184a;
+  }
+  .home #asideRight .asideRightMain #changeTemperature .switch.active::after {
+    right: 0;
+    left: unset;
+  }
+  .home #asideRight .asideRightMain #changeTemperature .switch span {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    background: none;
+    color: white;
+  }
+  .home #asideRight .asideRightMain #nextDays {
+    display: flex;
+    margin: 30px 0;
+    justify-content: space-between;
+  }
+  .home #asideRight .asideRightMain #nextDays div {
+    width: 100px;
+    height: 130px;
+    background-color: #1e223a;
+    text-align: center;
+    color: white;
+    padding: 10px;
+  }
+  .home #asideRight .asideRightMain #nextDays div img {
+    width: 80%;
+    margin: 0px;
+  }
+  .home #asideRight .asideRightMain #nextDays div p {
+    font-size: 13px;
+  }
+  .home #asideRight .asideRightMain #todayHighlights {
+    color: white;
+  }
+  .home #asideRight .asideRightMain .ji, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
+    width: 315px;
+    background-color: #1e223a;
+    margin: 15px;
+  }
+  .home #asideRight .asideRightMain .centrar, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
+    text-align: center;
+  }
+  .home #asideRight .asideRightMain .centrar h5, .home #asideRight .asideRightMain #highlights .highlightsSecond h5, .home #asideRight .asideRightMain #highlights .highlightsMain h5 {
+    margin-top: 12px;
+  }
+  .home #asideRight .asideRightMain .centrar h2, .home #asideRight .asideRightMain #highlights .highlightsSecond h2, .home #asideRight .asideRightMain #highlights .highlightsMain h2 {
+    margin: 12px;
+    font-size: 36px;
+  }
+  .home #asideRight .asideRightMain #highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    color: white;
+  }
+  .home #asideRight .asideRightMain #highlights .highlightsMain {
+    height: 150px;
+  }
+  .home #asideRight .asideRightMain #highlights .highlightsSecond {
+    height: 125px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .remove {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

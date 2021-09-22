@@ -1,0 +1,197 @@
+@media only screen and (max-width: 900px) {
+  $color-main: #1e223a;
+  $color-secondary: #100f1d;
+  $input: #6d717d;
+
+  .home {
+    display: none;
+
+    #asideLeft {
+      color: white;
+      width: 100%;
+      height: 100vh;
+      background-color: $color-main;
+
+      div {
+        width: 100%;
+        text-align: center;
+      }
+
+      .home {
+        padding: 15px;
+        justify-content: space-evenly;
+        input {
+          padding: 15px;
+          font-size: 20px;
+        }
+        img {
+          width: 50px;
+        }
+      }
+
+      .weather {
+        height: 40%;
+        img {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+
+      .temp {
+        height: 15%;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .city {
+        height: 25%;
+        font-size: 36px;
+
+        div {
+          #idImg {
+            width: 80px;
+            height: 80px;
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .author {
+        opacity: 50%;
+        font-size: 20px;
+      }
+    }
+
+    #asideRight {
+      width: 100%;
+
+      .asideRightMain {
+        width: 90%;
+        margin: 0 auto;
+
+        #changeTemperature {
+          width: 100%;
+          display: flex;
+          justify-content: right;
+
+          .switch {
+            margin-top: 15px;
+            background-color: #335c67;
+            border-radius: 1000px;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            outline: none;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 35px;
+              height: 35px;
+              position: absolute;
+              background-color: whitesmoke;
+              top: 0;
+              left: 0;
+              right: unset;
+              border-radius: 100px;
+              transition: 0.3s ease all;
+              box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            &.active {
+              background-color: #c9184a;
+              &::after {
+                right: 0;
+                left: unset;
+              }
+            }
+
+            span {
+              width: 35px;
+              height: 35px;
+              line-height: 35px;
+              display: block;
+              background: none;
+              color: white;
+            }
+          }
+        }
+
+        #nextDays {
+          display: flex;
+          margin: 30px 0;
+          justify-content: space-between;
+
+          div {
+            width: 100px;
+            height: 130px;
+            background-color: $color-main;
+            text-align: center;
+            color: white;
+            padding: 10px;
+
+            img {
+              width: 80%;
+              margin: 0px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+
+        #todayHighlights {
+          color: white;
+        }
+
+        .ji {
+          width: 315px;
+          background-color: $color-main;
+          margin: 15px;
+        }
+
+        .centrar {
+          text-align: center;
+          h5 {
+            margin-top: 12px;
+          }
+          h2 {
+            margin: 12px;
+            font-size: 36px;
+          }
+        }
+
+        #highlights {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          margin: 0 auto;
+          color: white;
+
+          .highlightsMain {
+            @extend .ji;
+            @extend .centrar;
+            height: 150px;
+          }
+          .highlightsSecond {
+            @extend .ji;
+            @extend .centrar;
+            height: 125px;
+          }
+        }
+      }
+    }
+  }
+
+  .active {
+    display: block;
+  }
+
+  .remove {
+    display: none;
+  }
+}
