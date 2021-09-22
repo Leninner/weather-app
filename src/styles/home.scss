@@ -25,15 +25,25 @@ $input: #6d717d;
       display: flex;
       width: 50%;
       padding: 25px;
+      align-items: center;
       h2 {
         margin-left: 50px;
-        margin-right: 25px;
+        margin-right: 50px;
+        font-size: 36px;
       }
       ul {
         display: flex;
         list-style: none;
         li {
-          margin: 10px;
+          margin: 20px;
+          font-weight: 100;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+          a:hover {
+            color: rgb(6, 255, 193);
+          }
         }
       }
     }

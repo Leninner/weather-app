@@ -18,17 +18,27 @@
   display: flex;
   width: 50%;
   padding: 25px;
+  align-items: center;
 }
 .mainHome header #home-info h2 {
   margin-left: 50px;
-  margin-right: 25px;
+  margin-right: 50px;
+  font-size: 36px;
 }
 .mainHome header #home-info ul {
   display: flex;
   list-style: none;
 }
 .mainHome header #home-info ul li {
-  margin: 10px;
+  margin: 20px;
+  font-weight: 100;
+}
+.mainHome header #home-info ul li a {
+  text-decoration: none;
+  color: white;
+}
+.mainHome header #home-info ul li a:hover {
+  color: #06ffc1;
 }
 .mainHome header #home-contacto {
   padding: 25px;
