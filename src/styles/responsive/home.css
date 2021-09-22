@@ -1,4 +1,4 @@
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
   .mainHome {
     height: 100vh;
     width: 100%;
@@ -22,6 +22,9 @@
   .mainHome header #home-info ul {
     align-items: center;
     justify-content: center;
+  }
+  .mainHome header #home-info ul li {
+    font-size: 20px;
   }
   .mainHome .contenedorHome {
     display: block;

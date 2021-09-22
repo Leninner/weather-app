@@ -1,4 +1,4 @@
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
   $color-main: #1e223a;
   $color-secondary: #100f1d;
   $input: #6d717d;
@@ -29,6 +29,9 @@
         ul {
           align-items: center;
           justify-content: center;
+          li {
+            font-size: 20px;
+          }
         }
       }
     }
