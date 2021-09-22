@@ -1,0 +1,38 @@
+@media only screen and (max-width: 500px) {
+  .mainHome {
+    height: 100vh;
+    width: 100%;
+    background: #0f2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2c5364, #203a43, #0f2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2c5364, #203a43, #0f2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .mainHome header #home-info {
+    padding: 10px;
+    align-items: center;
+    display: block;
+  }
+  .mainHome header #home-info h2 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+  }
+  .mainHome header #home-info ul {
+    align-items: center;
+    justify-content: center;
+  }
+  .mainHome .contenedorHome {
+    display: block;
+  }
+  .mainHome .contenedorHome aside {
+    width: 100%;
+  }
+  .mainHome .contenedorHome h2 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
