@@ -2,6 +2,8 @@
 
 Sitio Web funcional para consultar el clima en cualquier ciudad que la API del clima.
 
+![img](./src/assets/images/home.png)
+
 ## Tecnologías Utilizadas
 
 1. Javascript
