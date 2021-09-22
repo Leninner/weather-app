@@ -1,7 +1,38 @@
 .mainHome {
   height: 100vh;
   width: 100%;
-  background-color: #1e223a;
+  background: conic-gradient(from 90deg at 70% 40%, red, #ff00bf, #8000ff, #0040ff, aqua, #00ff40, #80ff00, #ffbf00, red);
+}
+.mainHome header {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.mainHome header #home-info {
+  display: flex;
+  width: 50%;
+  padding: 20px;
+}
+.mainHome header #home-info h2 {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.mainHome header #home-info ul {
+  display: flex;
+  list-style: none;
+}
+.mainHome header #home-info ul li {
+  margin: 10px;
+}
+.mainHome header #home-contacto {
+  padding: 20px;
+  width: 50%;
+  text-align: right;
+}
+.mainHome header #home-contacto button {
+  margin-right: 25px;
 }
 
 /*# sourceMappingURL=home.css.map */

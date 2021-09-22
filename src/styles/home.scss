@@ -1,5 +1,50 @@
 .mainHome {
   height: 100vh;
   width: 100%;
-  background-color: #1e223a;
+  background: conic-gradient(
+    from 90deg at 70% 40%,
+    hsl(360, 100%, 50%),
+    hsl(315, 100%, 50%),
+    hsl(270, 100%, 50%),
+    hsl(225, 100%, 50%),
+    hsl(180, 100%, 50%),
+    hsl(135, 100%, 50%),
+    hsl(90, 100%, 50%),
+    hsl(45, 100%, 50%),
+    hsl(0, 100%, 50%)
+  );
+
+  header {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    #home-info {
+      display: flex;
+      width: 50%;
+      padding: 20px;
+      h2 {
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        li {
+          margin: 10px;
+        }
+      }
+    }
+
+    #home-contacto {
+      padding: 20px;
+      width: 50%;
+      text-align: right;
+      button {
+        margin-right: 25px;
+      }
+    }
+  }
 }
