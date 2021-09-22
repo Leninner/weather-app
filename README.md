@@ -16,6 +16,14 @@ Sitio Web funcional para consultar el clima en cualquier ciudad que la API del c
 8. GitHub
 9. Ubuntu
 
+## Capturas de Pantalla
+
+![img](./src/assets/images-md/home-web.jpeg)
+![img](./src/assets/images-md/faren-web.png)
+![img](./src/assets/images-md/home.jpeg)
+![img](./src/assets/images-md/faren.jpeg)
+![img](./src/assets/images-md/main.jpeg)
+
 ## Sitios Web de Ayuda
 
 1. Coolors.co
