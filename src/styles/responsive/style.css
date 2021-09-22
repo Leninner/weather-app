@@ -103,47 +103,48 @@
     color: white;
   }
   .home #asideRight .asideRightMain #nextDays {
-    display: flex;
-    margin: 30px 0;
-    justify-content: space-between;
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;
   }
   .home #asideRight .asideRightMain #nextDays div {
-    width: 100px;
-    height: 130px;
-    background-color: #1e223a;
-    text-align: center;
-    color: white;
-    padding: 10px;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
   }
   .home #asideRight .asideRightMain #nextDays div img {
     width: 80%;
     margin: 0px;
   }
   .home #asideRight .asideRightMain #nextDays div p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .home #asideRight .asideRightMain #todayHighlights {
     color: white;
   }
   .home #asideRight .asideRightMain .ji, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
-    width: 315px;
+    width: 80%;
     background-color: #1e223a;
-    margin: 15px;
   }
   .home #asideRight .asideRightMain .centrar, .home #asideRight .asideRightMain #highlights .highlightsSecond, .home #asideRight .asideRightMain #highlights .highlightsMain {
-    text-align: center;
+    margin: 0 auto;
   }
   .home #asideRight .asideRightMain .centrar h5, .home #asideRight .asideRightMain #highlights .highlightsSecond h5, .home #asideRight .asideRightMain #highlights .highlightsMain h5 {
     margin-top: 12px;
+    font-size: 20px;
   }
   .home #asideRight .asideRightMain .centrar h2, .home #asideRight .asideRightMain #highlights .highlightsSecond h2, .home #asideRight .asideRightMain #highlights .highlightsMain h2 {
     margin: 12px;
     font-size: 36px;
   }
   .home #asideRight .asideRightMain #highlights {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
+    display: block;
     color: white;
   }
   .home #asideRight .asideRightMain #highlights .highlightsMain {
