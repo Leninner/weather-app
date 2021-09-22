@@ -18,7 +18,7 @@ Sitio Web funcional para consultar el clima en cualquier ciudad que la API del c
 
 ## Capturas de Pantalla
 
-![img](./src/assets/images-md/home-web.jpeg)
+![img](./src/assets/images-md/home-web.png)
 ![img](./src/assets/images-md/faren-web.png)
 ![img](./src/assets/images-md/home.jpeg)
 ![img](./src/assets/images-md/faren.jpeg)
