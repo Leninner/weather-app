@@ -16,7 +16,7 @@
 }
 .mainHome header #home-info {
   display: flex;
-  width: 50%;
+  width: 100%;
   padding: 25px;
   align-items: center;
 }
@@ -62,7 +62,7 @@
 }
 .mainHome .contenedorHome #buscador input {
   cursor: pointer;
-  width: 80%;
+  width: 70%;
   height: 40px;
   outline: none;
   border: 2px solid white;
@@ -75,10 +75,7 @@
 .mainHome .contenedorHome #buscador ::placeholder {
   text-align: center;
 }
-.mainHome .contenedorHome #buscador input:focus {
-  border: 2px solid black;
-}
-.mainHome .contenedorHome #buscador .clear {
+.mainHome .contenedorHome #buscador .findInfoCityMain {
   border-style: none;
   width: 20%;
   height: 35px;
@@ -86,7 +83,7 @@
   font-size: 20px;
   transition: 0.7s ease all;
 }
-.mainHome .contenedorHome #buscador .clear:hover {
+.mainHome .contenedorHome #buscador .findInfoCityMain:hover {
   background-color: #06ffc1;
   cursor: pointer;
 }

@@ -1,4 +1,4 @@
-let nameCity = document.getElementById('name');
+let nameCity = document.getElementById('nameCity');
 let btn = document.getElementById('btn');
 let imagen = document.getElementById('imgPrueba');
 let idImg = document.getElementById('idImg');
@@ -33,6 +33,37 @@ const tempTomorrow = document.getElementById('tempTomorrow'),
   tempThirdDay = document.getElementById('tempThirdDay'),
   tempFourthDay = document.getElementById('tempFourthDay'),
   tempFiveDay = document.getElementById('tempFiveDay');
+
+//Lógica para ir de la página inicial a la página del clima
+const findInfoCityMain = document.querySelector('.findInfoCityMain'),
+  mainHome = document.querySelector('.mainHome'),
+  home = document.querySelector('.home');
+const cityMain = document.querySelector('#cityMain');
+
+findInfoCityMain.addEventListener('click', () => {
+  mainHome.classList.add('remove');
+  home.classList.add('active');
+  displayInfo(cityMain.value);
+  cityMain.value = '';
+  //Es importante hacer una callback para funciones, ya que de caso contrario se ejecuta inmediatamente
+});
+
+document.addEventListener('keydown', (e) => {
+  if (cityMain.value && e.key === 'Enter') {
+    mainHome.classList.add('remove');
+    home.classList.add('active');
+    displayInfo(cityMain.value);
+    cityMain.value = '';
+  }
+});
+
+const returnHome = document.querySelector('#returnHome');
+
+returnHome.addEventListener('click', () => {
+  mainHome.classList.remove('remove');
+  home.classList.remove('active');
+});
+
 //Librería de días y meses
 
 const dias = ['Sun', 'Mon', 'Thu', 'Web', 'Tue', 'Fri', 'Sat'];
@@ -56,11 +87,6 @@ async function getCityInfo(cityName) {
   const cityInfo = await response.json();
   return cityInfo;
 }
-
-imagen.src =
-  location.protocol === 'http:'
-    ? 'http://openweathermap.org/img/wn/01d@4x.png'
-    : 'https://openweathermap.org/img/wn/01d@4x.png';
 
 // Función para comprobar medida de temperatura
 const comprobarMedidaTemp = (temps, data) => {
@@ -197,22 +223,4 @@ document.addEventListener('keydown', (e) => {
     displayInfo(nameCity.value);
     nameCity.value = '';
   }
-});
-
-//Lógica para ir de la página inicial a la página del clima
-const btnClear = document.querySelector('.clear'),
-  mainHome = document.querySelector('.mainHome'),
-  home = document.querySelector('.home');
-
-btnClear.addEventListener('click', () => {
-  mainHome.classList.add('remove');
-  home.classList.add('active');
-});
-
-const returnHome = document.querySelector('#returnHome');
-
-returnHome.addEventListener('click', () => {
-  // location.reload(true);
-  mainHome.classList.remove('remove');
-  home.classList.remove('active');
 });

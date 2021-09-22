@@ -21,7 +21,7 @@
     <section class="mainHome">
       <header>
         <section id="home-info">
-          <h2>Soldis</h2>
+          <h2>Weather App</h2>
           <div>
             <ul>
               <li><a href="https://github.com/Leninner/weather-app" target="_blank">Repositorio</a></li>
@@ -37,8 +37,8 @@
       <div class="contenedorHome">
         <aside id="buscador">
           <h2>Busca una Ciudad</h2>
-          <input type="text" placeholder="Find for a City" />
-          <button class="clear">Buscar</button>
+          <input type="text" placeholder="Find for a City" id="cityMain" />
+          <button class="findInfoCityMain">Buscar</button>
         </aside>
         <aside id="asideImgHome">
           <img src="./src/assets/images/home.png" alt="" />
@@ -50,7 +50,7 @@
       <div id="asideLeft">
         <div class="home">
           <img src="https://img.icons8.com/fluency/48/000000/home.png" id="returnHome" />
-          <input type="text" placeholder="Search for a City" id="name" />
+          <input type="text" placeholder="Search for a City" id="nameCity" />
           <img src="https://img.icons8.com/emoji/48/000000/magnifying-glass-tilted-left-emoji.png" id="btn" />
         </div>
 
@@ -59,16 +59,16 @@
         </div>
 
         <div class="temp">
-          <h1 id="temp">59 °F</h1>
+          <h1 id="temp"></h1>
         </div>
 
         <div class="city">
           <div>
-            <h3 id="cityName">Ciudad</h3>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="Leninner" id="idImg" />
-            <p id="pInfo">Info</p>
+            <h3 id="cityName"></h3>
+            <img src="" alt="Leninner" id="idImg" />
+            <p id="pInfo"></p>
           </div>
-          <p id="countrySlug">59 °F</p>
+          <p id="countrySlug"></p>
         </div>
 
         <div class="author">Developed by Leninner</div>
@@ -87,27 +87,27 @@
             <div>
               <h4>Tomorrow</h4>
               <img src="./src/assets/images/lluvia.png" alt="" id="imgTomorrow" />
-              <p id="tempTomorrow">158 - 159</p>
+              <p id="tempTomorrow"></p>
             </div>
             <div>
-              <h4 id="secondDay">Tomorrow</h4>
+              <h4 id="secondDay"></h4>
               <img src="./src/assets/images/lluvia.png" alt="" id="imgSecondDay" />
-              <p id="tempSecondDay">158 - 159</p>
+              <p id="tempSecondDay"></p>
             </div>
             <div>
-              <h4 id="thirdDay">Tomorrow</h4>
+              <h4 id="thirdDay"></h4>
               <img src="./src/assets/images/lluvia.png" alt="" id="imgThirdDay" />
-              <p id="tempThirdDay">158 - 159</p>
+              <p id="tempThirdDay"></p>
             </div>
             <div>
-              <h4 id="fourthDay">Tomorrow</h4>
+              <h4 id="fourthDay"></h4>
               <img src="./src/assets/images/lluvia.png" alt="" id="imgFourthDay" />
-              <p id="tempFourthDay">158 - 159</p>
+              <p id="tempFourthDay"></p>
             </div>
             <div>
-              <h4 id="fiveDay">Tomorrow</h4>
+              <h4 id="fiveDay"></h4>
               <img src="./src/assets/images/lluvia.png" alt="" id="imgFiveDay" />
-              <p id="tempFiveDay">158 - 159</p>
+              <p id="tempFiveDay"></p>
             </div>
           </section>
 
@@ -118,20 +118,20 @@
           <section id="highlights">
             <div class="highlightsMain">
               <h5>Wind Speed</h5>
-              <h2 id="speedWind">7 mph</h2>
+              <h2 id="speedWind"></h2>
             </div>
             <div class="highlightsMain">
               <h5>Humidity</h5>
-              <h2 id="humedad">84%</h2>
+              <h2 id="humedad"></h2>
               <input type="range" id="rangeHumedad" value="" min="0" max="100" />
             </div>
             <div class="highlightsSecond">
               <h5>Visibility</h5>
-              <h2 id="visibilidad">6.4 millas</h2>
+              <h2 id="visibilidad"></h2>
             </div>
             <div class="highlightsSecond">
               <h5>Air Pressure</h5>
-              <h2 id="pressure">998 mb</h2>
+              <h2 id="pressure"></h2>
             </div>
           </section>
         </div>
